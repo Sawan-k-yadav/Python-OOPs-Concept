@@ -1,0 +1,87 @@
+from flask import Flask,request
+
+app=Flask(__name__)
+
+## Routes
+
+@app.route('/')
+def welcome():
+    return "Hello World"
+
+@app.route('/aboutus')
+def aboutus():
+    return "We are ineuron"
+
+@app.route('/demo',methods=['POST'])
+def math_operation():
+    if(request.method=='POST'):
+        operation=request.json['operation']
+        num1=request.json['num1']
+        num2=request.json['num2']
+        result=num1 + num2
+
+        return "The operation is {} and the result is {}".format(operation,result)
+
+
+
+
+if __name__=="__main__":
+    app.run(host="0.0.0.0",port=5000)
+
+
+
+
+
+from flask import Flask,request,jsonify
+
+app=Flask(__name__)
+
+
+@app.route("/")
+
+def homepage():
+    return "<h1>Welcome to the home page<h1>"
+
+@app.route("/add",methods=['POST'])
+def addition():
+    if request.method=="POST":
+        result=int(request.json['num1']) + int(request.json['num2'])
+        return jsonify(" The summation is {}".format(result))
+
+if __name__=="__main__":
+    app.run(host="0.0.0.0",port=5000)
+
+
+
+
+
+
+
+
+
+
+<select id="operation" name="operation">
+        <option value="add">add</option>
+        <option value="subtract">subtract</option>
+        <option value="multiply">multiply</option>
+        <option value="divide">divide</option>
+      </select>
+
+
+
+
+
+QQQ
+
+
+https://www.youtube.com/watch?v=sbxiipaBN-M
+
+
+https://www.youtube.com/watch?v=sbxiipaBN-M
+
+
+https://www.youtube.com/watch?v=sbxiipaBN-M
+
+
+
+https://www.youtube.com/watch?v=sbxiipaBN-M
